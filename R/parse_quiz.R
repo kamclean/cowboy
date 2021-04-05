@@ -19,12 +19,12 @@ parse_quiz <- function(question_stats, question_xml, response, question_change =
 
 
   # xml_object = Dashboard Courses Academia Career Overview Pre-Module Survey Question bank Export Moodle XML format
-  meta <- cowboy::parse_quiz_meta(question_xml = question_xml, question_stats = question_stats)
+  meta <- cowboy::parse_quiz_metadata(question_xml = question_xml, question_stats = question_stats)
 
   var_free_text <- meta %>% filter(class=="shortanswer") %>% pull(response) %>% as.character(response)
 
   # Dashboard Courses Academia Career Overview Pre-Module Survey Results Responses
-  data <- cowboy::parse_quiz_response(data= response, question_change = question_change) %>%
+  data <- cowboy::parse_quiz_response(response= response, question_change = question_change) %>%
     dplyr::mutate(response_q = stringr::str_remove_all(response, "-([0-9]+)")) %>%
     dplyr::mutate(response = case_when(response_q %in% var_free_text ~ stringr::str_remove_all(response, "-([0-9]+)"),
                                        TRUE ~ response)) %>%
