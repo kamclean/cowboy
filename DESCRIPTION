@@ -1,0 +1,25 @@
+Package: cowboy
+Type: Package
+Title: Wrangle moodle data into R for analysis
+Version: 0.1.0
+Author: as.person(c(
+    "Kenneth McLean <k.a.mclean@ed.ac.uk> [aut, cre]"))
+Maintainer: Kenneth McLean <k.a.mclean@ed.ac.uk>
+Description: The cowboy package assists with data wranging to convert data extracted from moodle into dataframes which are optimised for analysis in R.
+Imports: dplyr,
+  purrr,
+  stringr,
+  magrittr,
+  tidyr,
+  xml2,
+  tibble,
+  lubridate,
+Suggests: knitr,
+    rmarkdown,
+    devtools,
+    testthat
+VignetteBuilder: knitr
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
