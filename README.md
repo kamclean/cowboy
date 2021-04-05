@@ -4,6 +4,8 @@
 <img src="man/figures/impactr_logo.png" align="right" width="159" height="174"/>
 
 [to be added]
+   
+
 
 Installation and Documentation
 ------------------------------
